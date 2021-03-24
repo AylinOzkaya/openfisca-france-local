@@ -18,9 +18,5 @@ class strasbourg_metropole_tarification_cantine(Variable):
         qf = individu('strasbourg_metropole_quotient_familial', period)
         tarif = parameters(period).metropoles.strasbourg.tarifs_cantine
         return tarif.calc(qf)
-        # return (qf <= 410) + (qf <= 510) + (qf <= 620) + (qf <= 720) + (qf <= 820) + (qf <= 920) + (qf <= 1030) + (qf <= 1540) + (qf <= 2050)
-        return select(
-            [qf <= 410],
-            [1.50],
-            default=2.15)
+        
           
